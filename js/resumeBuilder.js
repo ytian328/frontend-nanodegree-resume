@@ -8,7 +8,7 @@ var bio = {
 		"twitter" : "",
 		"blog" : "",
 		"location": "Piscataway, NJ",
-		"picture": "./images/fry.jpg",
+		"picture": "./images/YT.jpg",
 		"welcomeMsg": "",
 		"skills": {
 			"coding": ["java", "python", "c/c++", "HTML", "JavaScript", "XML", "Perl"],
