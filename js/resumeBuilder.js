@@ -2,18 +2,19 @@
 
 var bio = {
 		"name": "Yuan Tian",
-		"role": "CS major student",
+		"role": "CS major graduate student",
 		"email": "ytian1987@gmail.com",
 		"github": "https://github.com/ytian328",
+		"linkedin": "https://www.linkedin.com/in/yuan-tian-10212130/",
 		"twitter" : "",
 		"blog" : "",
 		"location": "Piscataway, NJ",
 		"picture": "./images/YT.jpg",
 		"welcomeMsg": "",
 		"skills": {
-			"coding": ["java", "python", "c/c++", "HTML", "JavaScript", "XML", "Perl"],
-			"techenvir": ["MongoDB", "MySQL", "Hadoop",  "MATLAB", "AWS", "Amazon Product Advertising API", "JSP", "JQuery"],
-			"os": ["Linux", "Windows"]
+			"coding": ["java", " python", " c/c++", " HTML", " JavaScript", " XML", " Perl"],
+			"techenvir": ["MongoDB", " MySQL", " Hadoop",  " MATLAB", " AWS", " Amazon Product Advertising API", " JSP", " JQuery"],
+			"os": ["Linux", " Windows"]
 		}
 };
 var education = {
@@ -44,7 +45,6 @@ var education = {
 			}
 		]
 };
-
 var work = {
 		"jobs": [
 			{
@@ -67,7 +67,6 @@ var work = {
 		]
 			
 };
-
 var projects = {
 		"projects":[
 			{
@@ -107,12 +106,23 @@ var projects = {
 		]
 };
 
+
+bio.displayBio = function() {
+	$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
+	$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
+	$("#header").append(HTMLbioPic.replace("%data%", bio.picture));
+	$("#header").append(HTMLemail.replace("%data%", bio.email));
+	$("#header").append(HTMLgithub.replace(/%data%/g, bio.github));
+	$("#header").append(HTMLlinkedin.replace(/%data%/g, bio.linkedin));
+	$("#footerContacts").append(HTMLemail.replace("%data%", bio.email));
+}
+
 bio.displaySkills = function() {
 	$("#header").append(HTMLskillsStart);
 	$("#skills-h3").append(HTMLskills.replace("%data%", bio.skills.coding));
 	$("#skills-h3").append(HTMLskills.replace("%data%", bio.skills.techenvir));
 	$("#skills-h3").append(HTMLskills.replace("%data%", bio.skills.os));
-};
+}
 
 education.display = function() {
 	if(education.schools != null) {
@@ -126,13 +136,7 @@ education.display = function() {
 	}
 }
 
-bio.displayBio = function() {
-	$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
-	$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
-	$("#header").append(HTMLbioPic.replace("%data%", bio.picture));
-	$("#topContacts").prepend(HTMLemail.replace("%data%", bio.email));
-	$("#topContacts").prepend(fGithub = HTMLgithub.replace("%data%", bio.github));
-};
+
 
 projects.display = function(){
 	if(projects.projects != null) {	
