@@ -145,7 +145,7 @@ function initMap() {
 	window.mapBounds = new google.maps.LatLngBounds();
 	pinPoster(locations);
 }
-
+window.addEventListener('load', initMap);
 window.addEventListener('resize', function(e) {
 	map.fitBounds(mapBounds);
 });
